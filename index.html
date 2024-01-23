@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Calc</title>
+    <link
+    href="https://cdn.jsdelivr.net/npm/remixicon@4.1.0/fonts/remixicon.css"
+    rel="stylesheet"
+/>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+        <h2><i class="ri-calculator-fill"></i> Calculator.</h2>
+      <div class="calControl">
+        <div class="input">
+          <input type="text" value="" placeholder="0" id="inputnum" />
+        </div>
+        <div class="four-container">
+          <button value="" onclick="allclear()">AC</button>
+          <button onclick="Del()">DEl</button>
+          <button onclick="Calculate('.')">.</button>
+          <button onclick="Calculate('%')">%</button>
+        </div>
+        <div class="four-container">
+          <button onclick="Calculate('7')">7</button>
+          <button onclick="Calculate('8')">8</button>
+          <button onclick="Calculate('9')">9</button>
+          <button onclick="Calculate('+')">+</button>
+        </div>
+        <div class="four-container">
+          <button onclick="Calculate('4')">4</button>
+          <button onclick="Calculate('5')">5</button>
+          <button onclick="Calculate('6')">6</button>
+          <button onclick="Calculate('-')">-</button>
+        </div>
+        <div class="four-container">
+          <button onclick="Calculate('1')">1</button>
+          <button onclick="Calculate('2')">2</button>
+          <button onclick="Calculate('3')">3</button>
+          <button onclick="Calculate('*')">x</button>
+        </div>
+        <div class="four-container">
+          <button onclick="Calculate('0')">0</button>
+          <button onclick="Calculate('.')">.</button>
+          <button onclick="Equal()">=</button>
+          <button onclick="Calculate('/')">/</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+        
+        const inputText = document.getElementById('inputnum');
+        const Calculate=(val)=>{
+            inputText.value += val;
+        }
+        const Equal=()=>{
+            try{
+                inputText.value = eval(inputText.value);
+            }catch(error){
+                inputText.value = 'Error';
+            }
+        }
+        const allclear=()=>{
+            inputText.value ="";
+        }
+        const Del=()=>{
+            inputText.value = inputText.value.slice(0,-1);
+        }
+    </script>
+    </body>
+    </html>
+    
+    </script>
